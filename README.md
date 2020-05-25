@@ -85,7 +85,7 @@ project=project_name -d spider=spider_name
 
 Example :
 
-###To Add a task
+### To Add a task
 ```.env
 curl http://localhost:6800/schedule.json -d project=scraper -d 
 spider=mySpider -d url=https://browneyedbibliophile.wordpress.com/ -d 
@@ -96,7 +96,7 @@ Output :
 {"node_name": "node_name", "status": "ok", "jobid": "aklsdhfjlasdfasdfsadfasd"}
 ```
 
-###To Cancel a task
+### To Cancel a task
 ```.env
 curl http://localhost:6800/cancel.json -d project=scraper -d job=2695cb169e6911eab70338f9d371ef52
 ```
