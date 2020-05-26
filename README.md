@@ -104,3 +104,64 @@ Output :
 ```.env
 {"node_name": "node_name", "status": "ok", "prevstate": null}
 ```
+
+
+### To List tasks
+```.env
+curl http://localhost:6800/listprojects.json
+```
+Output : 
+```.env
+{"node_name": "node_name", "status": "ok", "projects": ["scraper", "MovieScrap", "default"]}
+```
+
+
+### To List Versions
+```.env
+curl http://localhost:6800/listversions.json?project=scraper
+```
+Output : 
+```.env
+{"node_name": "node_name", "status": "ok", "versions": ["1590468982"]}
+```
+
+
+### To List Spiders
+```.env
+curl http://localhost:6800/listspiders.json?project=scraper
+```
+Output : 
+```.env
+{"node_name": "node_name", "status": "ok", "spiders": ["mySpider"]}
+```
+
+
+### To List Jobs
+```.env
+curl http://localhost:6800/listjobs.json?project=scraper
+```
+Output : 
+```.env
+{"node_name": "Jais-MBP-2", "status": "ok", "pending": [], "running": [], "finished": [{"id": "41660f429f0d11eab19538f9d371ef52", "spider": "mySpider", "start_time": "2020-05-26 10:26:27.999800", "end_time": "2020-05-26 10:26:32.869970"}, {"id": "6f963f689f0d11eab19538f9d371ef52", "spider": "mySpider", "start_time": "2020-05-26 10:27:48.000979", "end_time": "2020-05-26 10:27:54.865389"}]}
+```
+
+
+
+### To Delete Version
+```.env
+curl http://localhost:6800/delversion.json -d project=myproject -d version=r99
+```
+Output : 
+```.env
+{"status": "ok"}
+```
+
+
+### To Delete Project
+```.env
+curl curl http://localhost:6800/delproject.json -d project=myproject
+```
+Output : 
+```.env
+{"status": "ok"}
+```
